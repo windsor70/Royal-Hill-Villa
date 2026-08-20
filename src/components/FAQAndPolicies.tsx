@@ -31,7 +31,7 @@ export const FAQAndPolicies: React.FC = () => {
           <div className="p-5 rounded-3xl bg-[#EAE5D9]/50 border border-[#D4CEC1] text-center shadow-sm">
             <Clock className="w-5 h-5 text-[#5C584A] mx-auto mb-2" />
             <h4 className="text-[#3D3A35] font-bold text-sm">Check-in / Check-out</h4>
-            <p className="text-[#7D7768] text-xs mt-0.5 font-medium">In: 14:00 • Out: 12:00 (Flexible on request)</p>
+            <p className="text-[#7D7768] text-xs mt-0.5 font-medium">In: 15:00 • Out: 12:00 (Flexible on request)</p>
           </div>
 
           <div className="p-5 rounded-3xl bg-[#EAE5D9]/50 border border-[#D4CEC1] text-center shadow-sm">
@@ -65,7 +65,7 @@ export const FAQAndPolicies: React.FC = () => {
                   className="w-full p-6 text-left flex items-center justify-between gap-4"
                 >
                   <span className="font-bold text-sm sm:text-base text-[#3D3A35]">
-                    {faq.question}
+                    {faq.q}
                   </span>
                   <div className={`p-2 rounded-full shrink-0 transition-colors ${
                     isOpen ? 'bg-[#5C584A] text-white' : 'bg-[#EAE5D9] text-[#5C584A]'
@@ -76,7 +76,7 @@ export const FAQAndPolicies: React.FC = () => {
 
                 {isOpen && (
                   <div className="px-6 pb-6 pt-1 border-t border-[#E6E2D3] text-[#5C584A] text-xs sm:text-sm leading-relaxed animate-in fade-in-50 duration-200">
-                    {faq.answer}
+                    {faq.a}
                   </div>
                 )}
               </div>

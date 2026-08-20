@@ -70,23 +70,23 @@ export default function App() {
                 </div>
 
                 <p className="text-[#3D3A35]/80 text-sm sm:text-base leading-relaxed">
-                  Breathe in crisp 18°C mountain air, immerse in our private heated infinity pool overlooking the valley of Mount Gede-Pangrango, and enjoy the effortless hospitality of our 24/7 dedicated villa butlers.
+                  Breathe in crisp 18°C mountain air, immerse in our private swimming pool overlooking the valley of Mount Gede-Pangrango, and enjoy the effortless hospitality of our 2 on-site staff.
                 </p>
 
                 <div className="grid grid-cols-2 gap-4 pt-2">
                   <div className="flex items-start gap-3 p-4 rounded-2xl bg-[#EAE5D9]/60 border border-[#D4CEC1]">
                     <Waves className="w-5 h-5 text-[#5C584A] shrink-0 mt-0.5" />
                     <div>
-                      <h4 className="text-[#3D3A35] font-bold text-sm">Heated Infinity Pool</h4>
-                      <p className="text-[#5C584A] text-xs mt-0.5">29°C - 31°C year-round warmth</p>
+                      <h4 className="text-[#3D3A35] font-bold text-sm">Private Swimming Pool</h4>
+                      <p className="text-[#5C584A] text-xs mt-0.5">Crystal mountain water & sun deck</p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-3 p-4 rounded-2xl bg-[#EAE5D9]/60 border border-[#D4CEC1]">
                     <ShieldCheck className="w-5 h-5 text-[#2D5A43] shrink-0 mt-0.5" />
                     <div>
-                      <h4 className="text-[#3D3A35] font-bold text-sm">24/7 Dedicated Butlers</h4>
-                      <p className="text-[#5C584A] text-xs mt-0.5">On-site resident staff assistance</p>
+                      <h4 className="text-[#3D3A35] font-bold text-sm">2 On-Site Staff</h4>
+                      <p className="text-[#5C584A] text-xs mt-0.5">Dedicated on-site resident staff assistance</p>
                     </div>
                   </div>
                 </div>
@@ -109,15 +109,15 @@ export default function App() {
                 <div className="space-y-4">
                   <div className="rounded-3xl overflow-hidden border border-[#E6E2D3] shadow-md aspect-[4/5] group bg-[#EAE5D9]">
                     <img
-                      src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1200&q=80"
-                      alt="Heated Infinity Pool at Royal Hill Villa"
+                      src="/photos/kolam renang.png"
+                      alt="Swimming Pool at Royal Hill Villa"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                   </div>
                   <div className="rounded-3xl overflow-hidden border border-[#E6E2D3] shadow-md aspect-square group bg-[#EAE5D9]">
                     <img
-                      src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=80"
-                      alt="Grand Living Pavilion"
+                      src="/photos/pendopo.png"
+                      alt="Pendopo & Hospitality Pavilion"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                   </div>
@@ -126,15 +126,15 @@ export default function App() {
                 <div className="space-y-4 pt-8">
                   <div className="rounded-3xl overflow-hidden border border-[#E6E2D3] shadow-md aspect-square group bg-[#EAE5D9]">
                     <img
-                      src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1000&q=80"
-                      alt="Royal Presidential Bedroom"
+                      src="/photos/kamar 1.png"
+                      alt="Grand Master Bedroom"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                   </div>
                   <div className="rounded-3xl overflow-hidden border border-[#E6E2D3] shadow-md aspect-[4/5] group bg-[#EAE5D9]">
                     <img
-                      src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80"
-                      alt="Sunset Al-Fresco Dining Terrace"
+                      src="/photos/area barbeque.png"
+                      alt="Al-Fresco Dining Terrace"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                   </div>

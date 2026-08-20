@@ -1,5 +1,5 @@
 import React from 'react';
-import { SURROUNDING_ATTRACTIONS, VILLA_LOCATION, VILLA_ALTITUDE, VILLA_WHATSAPP_CLEAN, VILLA_WHATSAPP_DISPLAY } from '../data/villaData';
+import { NEARBY_ATTRACTIONS, VILLA_LOCATION, VILLA_ALTITUDE, VILLA_WHATSAPP_CLEAN, VILLA_WHATSAPP_DISPLAY } from '../data/villaData';
 import { MapPin, Navigation, Sparkles, CloudSun, Clock, Compass, Car, MessageCircle, ExternalLink } from 'lucide-react';
 
 export const LocationSection: React.FC = () => {
@@ -143,7 +143,7 @@ export const LocationSection: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {SURROUNDING_ATTRACTIONS.map((attraction, index) => (
+            {NEARBY_ATTRACTIONS.map((attraction, index) => (
               <div
                 key={index}
                 className="bg-[#FDFBF7] rounded-3xl overflow-hidden border border-[#E6E2D3] hover:shadow-md transition-all duration-300 group shadow-sm"

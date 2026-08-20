@@ -1,6 +1,6 @@
 {
   "name": "Royal Hill Villa Puncak",
-  "description": "Exclusive luxury private villa in Puncak, Indonesia featuring breathtaking mountain vistas, private heated infinity pool, and seamless WhatsApp direct reservations.",
+  "description": "Exclusive luxury private villa in Puncak, Indonesia featuring breathtaking mountain vistas, private swimming pool, and seamless WhatsApp direct reservations.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

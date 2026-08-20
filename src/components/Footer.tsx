@@ -21,7 +21,7 @@ export const Footer: React.FC = () => {
             </div>
 
             <p className="text-[#5C584A] text-xs leading-relaxed max-w-sm mt-3">
-              An exclusive 2,500 m² private luxury mountain estate in Puncak, West Java. Featuring 4 grand master suites, private swimming pool, terrace billiards, complete BBQ & Korean hotpot station, bonfire pit, playground, and 24/7 dedicated butler service.
+              An exclusive 2,500 m² private luxury mountain estate in Puncak, West Java. Featuring 4 grand master suites, private swimming pool, terrace billiards, complete BBQ & Korean hotpot station, bonfire pit, playground, and 2 on-site staff available for your assistance.
             </p>
 
             {/* Direct WhatsApp Pill */}
@@ -45,8 +45,8 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2.5 text-xs font-medium">
               <li><a href="#gallery" className="hover:text-[#3D3A35] transition-colors">High-Res Photo Gallery</a></li>
-              <li><a href="#suites" className="hover:text-[#3D3A35] transition-colors">6 Luxury Suites</a></li>
-              <li><a href="#amenities" className="hover:text-[#3D3A35] transition-colors">Heated Pool & Amenities</a></li>
+              <li><a href="#suites" className="hover:text-[#3D3A35] transition-colors">4 Master Suites</a></li>
+              <li><a href="#amenities" className="hover:text-[#3D3A35] transition-colors">Pool & Amenities</a></li>
               <li><a href="#booking-inquiry" className="hover:text-[#3D3A35] transition-colors">WhatsApp Direct Booking</a></li>
               <li><a href="#location" className="hover:text-[#3D3A35] transition-colors">Location & Weather</a></li>
               <li><a href="#reviews" className="hover:text-[#3D3A35] transition-colors">Guest Reviews</a></li>
@@ -63,7 +63,7 @@ export const Footer: React.FC = () => {
               <li>• Building Size: 950 m²</li>
               <li>• Capacity: 20 – 30 Guests</li>
               <li>• Altitude: 1,120 MASL</li>
-              <li>• Pool: Heated 29°C - 31°C</li>
+              <li>• Pool: Private Swimming Pool</li>
               <li>• Parking: 8+ Large SUVs</li>
             </ul>
           </div>

@@ -6,8 +6,89 @@ export const VILLA_WHATSAPP_DISPLAY = '+62 812-1285-5640';
 export const VILLA_LOCATION = 'Jl. Raya Puncak KM 84, Tugu Selatan, Cisarua, Bogor, Jawa Barat 16750, Indonesia';
 export const VILLA_ALTITUDE = '1,120 MASL (Cool 18°C - 23°C)';
 
+export interface VillaPhotoSheet {
+  id: string;
+  title: string;
+  subtitle: string;
+  fileName: string;
+  url: string;
+  category: 'rooms' | 'bathrooms' | 'bbq' | 'sports_kids' | 'outdoor';
+  itemCount: number;
+  labels: string[];
+  description: string;
+}
+
+export const AUTHENTIC_SHEETS: VillaPhotoSheet[] = [
+  {
+    id: 'sheet-rooms',
+    title: 'Rooms & Master Suites',
+    subtitle: 'Kamar 1, Kamar 2, Kamar 3, Kamar 4, Meja Rias, Meja Kerja',
+    fileName: 'rooms.png',
+    url: '/rooms.png',
+    category: 'rooms',
+    itemCount: 6,
+    labels: ['Kamar 1', 'Kamar 2', 'Kamar 3', 'Kamar 4', 'Meja Rias', 'Meja Kerja'],
+    description: 'Complete breakdown of all 4 master bedrooms including king & queen setups, dressing tables, and TV workstations.'
+  },
+  {
+    id: 'sheet-bathrooms',
+    title: 'Bathrooms & Hygiene Care',
+    subtitle: 'Kamar Mandi 1-4, Toilet Tamu, Kursi Lipat Mandi, Rak & Jet Shower',
+    fileName: 'bathrooms.png',
+    url: '/bathrooms.png',
+    category: 'bathrooms',
+    itemCount: 7,
+    labels: ['Kamar Mandi Kamar 1', 'Kamar Mandi Kamar 2', 'Toilet Tamu', 'Kamar Mandi Kamar 3', 'Kamar Mandi Kamar 4', 'Kursi Lipat Mandi', 'Rak & Jet Shower'],
+    description: 'En-suite bathrooms for all bedrooms, guest powder room, elderly accessible folding shower seat, and bidet jet showers.'
+  },
+  {
+    id: 'sheet-ammenities-1',
+    title: 'BBQ & Al-Fresco Dining Terrace',
+    subtitle: 'Area Barbeque, Alat Pemanggang Arang, Alat Pemanggang Gas, Peralatan BBQ',
+    fileName: 'ammenities.png',
+    url: '/ammenities.png',
+    category: 'bbq',
+    itemCount: 4,
+    labels: ['Area Barbeque', 'Alat Pemanggang Arang', 'Alat Pemanggang Gas', 'Peralatan BBQ'],
+    description: '20-seat banquet dining table, charcoal smoker barrel, dual-burner stainless gas grill, and Korean BBQ & shabu-shabu kit.'
+  },
+  {
+    id: 'sheet-ammenities-2',
+    title: 'Kids Playground & Fun Zones',
+    subtitle: 'Play Ground, Playhouse, Ayunan, Mini Basket',
+    fileName: 'ammenities 2.png',
+    url: '/ammenities 2.png',
+    category: 'sports_kids',
+    itemCount: 4,
+    labels: ['Play Ground', 'Playhouse', 'Ayunan', 'Mini Basket'],
+    description: 'Multi-color tire climbing tower, dual-slide playhouse with rubber safety mats, floral hoop swing, and toddler basketball.'
+  },
+  {
+    id: 'sheet-ammenities-3',
+    title: 'Sports & Recreational Games',
+    subtitle: 'Meja Pingpong, Jaring Bola, Basketball, Volleyball, Badminton',
+    fileName: 'ammenities 3.png',
+    url: '/ammenities 3.png',
+    category: 'sports_kids',
+    itemCount: 5,
+    labels: ['Meja Pingpong', 'Jaring Penangkap Bola Pingpong', 'Basketball', 'Volleyball', 'Badminton'],
+    description: 'Nextsist 22 competition table tennis with return net, basketball court, lawn volleyball net, and badminton sets.'
+  },
+  {
+    id: 'sheet-ammenities-4',
+    title: 'Outdoor Leisure, Pool & Lounges',
+    subtitle: 'Kolam Renang, Meja Billiard, Area Api Unggun, Pendopo, Gazebo',
+    fileName: 'ammenities 4.png',
+    url: '/ammenities 4.png',
+    category: 'outdoor',
+    itemCount: 5,
+    labels: ['Kolam Renang', 'Meja Billiard', 'Area Api Unggun', 'Pendopo', 'Gazebo'],
+    description: 'Private infinity swimming pool, royal blue terrace billiard table, sunken lawn fire pit, signature wooden pendopo, and gazebo.'
+  }
+];
+
 /**
- * 28 Authentic Photo Points corresponding directly to the 6 uploaded photo sheets:
+ * 28 Authentic Photo Points corresponding directly to the folder images:
  * Sheet 1: ammenities.png (Area Barbeque, Alat Pemanggang Arang, Alat Pemanggang Gas, Peralatan BBQ)
  * Sheet 2: ammenities 2.png (Play Ground, Playhouse, Ayunan, Mini Basket)
  * Sheet 3: ammenities 3.png (Meja Pingpong, Jaring Penangkap Bola Pingpong, Basketball, Volleyball, Badminton)
@@ -16,7 +97,7 @@ export const VILLA_ALTITUDE = '1,120 MASL (Cool 18°C - 23°C)';
  * Sheet 6: rooms.png (Kamar 1, Kamar 2, Kamar 3, Kamar 4, Meja Rias, Meja Kerja)
  */
 export const HIGH_RES_PHOTOS: VillaPhoto[] = [
-  // --- ROOMS & SUITES (from rooms.png) ---
+  // --- ROOMS & SUITES ---
   {
     id: 'room-kamar-1',
     captionId: 'Kamar 1',
@@ -28,7 +109,7 @@ export const HIGH_RES_PHOTOS: VillaPhoto[] = [
     featured: true,
     aspectRatio: 'landscape',
     sheetSource: 'rooms',
-    url: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=2000&q=85'
+    url: '/photos/kamar 1.png'
   },
   {
     id: 'room-kamar-2',
@@ -41,7 +122,7 @@ export const HIGH_RES_PHOTOS: VillaPhoto[] = [
     featured: true,
     aspectRatio: 'landscape',
     sheetSource: 'rooms',
-    url: 'https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=2000&q=85'
+    url: '/photos/kamar 2.png'
   },
   {
     id: 'room-kamar-3',
@@ -54,7 +135,7 @@ export const HIGH_RES_PHOTOS: VillaPhoto[] = [
     featured: true,
     aspectRatio: 'landscape',
     sheetSource: 'rooms',
-    url: 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=2000&q=85'
+    url: '/photos/kamar 3.png'
   },
   {
     id: 'room-kamar-4',
@@ -67,7 +148,7 @@ export const HIGH_RES_PHOTOS: VillaPhoto[] = [
     featured: true,
     aspectRatio: 'landscape',
     sheetSource: 'rooms',
-    url: 'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=2000&q=85'
+    url: '/photos/kamar 4.png'
   },
   {
     id: 'room-meja-rias',
@@ -80,7 +161,7 @@ export const HIGH_RES_PHOTOS: VillaPhoto[] = [
     featured: false,
     aspectRatio: 'portrait',
     sheetSource: 'rooms',
-    url: 'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=2000&q=85'
+    url: '/photos/meja rias.png'
   },
   {
     id: 'room-meja-kerja',
@@ -93,10 +174,10 @@ export const HIGH_RES_PHOTOS: VillaPhoto[] = [
     featured: false,
     aspectRatio: 'landscape',
     sheetSource: 'rooms',
-    url: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=2000&q=85'
+    url: '/photos/meja kerja.png'
   },
 
-  // --- BATHROOMS & HYGIENE (from bathrooms.png) ---
+  // --- BATHROOMS & HYGIENE ---
   {
     id: 'bath-kamar-1',
     captionId: 'Kamar Mandi Kamar 1',
@@ -108,7 +189,7 @@ export const HIGH_RES_PHOTOS: VillaPhoto[] = [
     featured: true,
     aspectRatio: 'portrait',
     sheetSource: 'bathrooms',
-    url: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=2000&q=85'
+    url: '/photos/kamar mandi kamar 1.png'
   },
   {
     id: 'bath-kamar-2',
@@ -121,7 +202,7 @@ export const HIGH_RES_PHOTOS: VillaPhoto[] = [
     featured: false,
     aspectRatio: 'portrait',
     sheetSource: 'bathrooms',
-    url: 'https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=2000&q=85'
+    url: '/photos/kamar mandi kamar 2.png'
   },
   {
     id: 'bath-toilet-tamu',
@@ -134,7 +215,7 @@ export const HIGH_RES_PHOTOS: VillaPhoto[] = [
     featured: true,
     aspectRatio: 'portrait',
     sheetSource: 'bathrooms',
-    url: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=2000&q=85'
+    url: '/photos/toilet tamu.png'
   },
   {
     id: 'bath-kamar-3',
@@ -147,7 +228,7 @@ export const HIGH_RES_PHOTOS: VillaPhoto[] = [
     featured: false,
     aspectRatio: 'portrait',
     sheetSource: 'bathrooms',
-    url: 'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=2000&q=85'
+    url: '/photos/kamar mandi kamar 3.png'
   },
   {
     id: 'bath-kamar-4',
@@ -160,7 +241,7 @@ export const HIGH_RES_PHOTOS: VillaPhoto[] = [
     featured: true,
     aspectRatio: 'portrait',
     sheetSource: 'bathrooms',
-    url: 'https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=2000&q=85'
+    url: '/photos/kamar mandi kamar 4.png'
   },
   {
     id: 'bath-kursi-lipat',
@@ -173,7 +254,7 @@ export const HIGH_RES_PHOTOS: VillaPhoto[] = [
     featured: false,
     aspectRatio: 'square',
     sheetSource: 'bathrooms',
-    url: 'https://images.unsplash.com/photo-1584622781564-1d987f7333c1?auto=format&fit=crop&w=2000&q=85'
+    url: '/photos/kursi lipat mandi.png'
   },
   {
     id: 'bath-rak-jet-shower',
@@ -186,10 +267,10 @@ export const HIGH_RES_PHOTOS: VillaPhoto[] = [
     featured: false,
     aspectRatio: 'square',
     sheetSource: 'bathrooms',
-    url: 'https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=2000&q=85'
+    url: '/photos/rak and jet shower.png'
   },
 
-  // --- BBQ & CULINARY (from ammenities.png) ---
+  // --- BBQ & CULINARY ---
   {
     id: 'bbq-area',
     captionId: 'Area Barbeque',
@@ -201,7 +282,7 @@ export const HIGH_RES_PHOTOS: VillaPhoto[] = [
     featured: true,
     aspectRatio: 'wide',
     sheetSource: 'ammenities',
-    url: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=2000&q=85'
+    url: '/photos/area barbeque.png'
   },
   {
     id: 'bbq-pemanggang-arang',
@@ -214,7 +295,7 @@ export const HIGH_RES_PHOTOS: VillaPhoto[] = [
     featured: false,
     aspectRatio: 'square',
     sheetSource: 'ammenities',
-    url: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=2000&q=85'
+    url: '/photos/alat pemanggang arang.png'
   },
   {
     id: 'bbq-pemanggang-gas',
@@ -227,7 +308,7 @@ export const HIGH_RES_PHOTOS: VillaPhoto[] = [
     featured: false,
     aspectRatio: 'square',
     sheetSource: 'ammenities',
-    url: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=2000&q=85'
+    url: '/photos/alat pemanggang gas.png'
   },
   {
     id: 'bbq-peralatan',
@@ -240,22 +321,22 @@ export const HIGH_RES_PHOTOS: VillaPhoto[] = [
     featured: true,
     aspectRatio: 'square',
     sheetSource: 'ammenities',
-    url: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=2000&q=85'
+    url: '/photos/peralatan bbq.png'
   },
 
-  // --- OUTDOOR LEISURE & SIGNATURE SPACES (from ammenities 4.png) ---
+  // --- OUTDOOR LEISURE & SIGNATURE SPACES ---
   {
     id: 'outdoor-kolam-renang',
     captionId: 'Kolam Renang',
     title: 'Private Infinity Swimming Pool',
     subtitle: 'Crystal turquoise inground pool with stainless entry ladder, sun deck, and glass architecture overlooking lush Puncak mountain slopes.',
     category: 'outdoor',
-    tag: 'Kolam Renang • Heated Pool',
+    tag: 'Kolam Renang • Swimming Pool',
     badge: 'Crystal Blue Waters',
     featured: true,
     aspectRatio: 'portrait',
     sheetSource: 'ammenities 4',
-    url: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=2000&q=85'
+    url: '/photos/kolam renang.png'
   },
   {
     id: 'outdoor-meja-billiard',
@@ -268,7 +349,7 @@ export const HIGH_RES_PHOTOS: VillaPhoto[] = [
     featured: true,
     aspectRatio: 'portrait',
     sheetSource: 'ammenities 4',
-    url: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=2000&q=85'
+    url: '/photos/meja billard.png'
   },
   {
     id: 'outdoor-api-unggun',
@@ -281,7 +362,7 @@ export const HIGH_RES_PHOTOS: VillaPhoto[] = [
     featured: true,
     aspectRatio: 'portrait',
     sheetSource: 'ammenities 4',
-    url: 'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=2000&q=85'
+    url: '/photos/area api unggun.png'
   },
   {
     id: 'outdoor-pendopo',
@@ -294,7 +375,7 @@ export const HIGH_RES_PHOTOS: VillaPhoto[] = [
     featured: true,
     aspectRatio: 'landscape',
     sheetSource: 'ammenities 4',
-    url: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=2000&q=85'
+    url: '/photos/pendopo.png'
   },
   {
     id: 'outdoor-gazebo',
@@ -307,10 +388,10 @@ export const HIGH_RES_PHOTOS: VillaPhoto[] = [
     featured: false,
     aspectRatio: 'landscape',
     sheetSource: 'ammenities 4',
-    url: 'https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=2000&q=85'
+    url: '/photos/gazebo.png'
   },
 
-  // --- KIDS PLAYGROUND & SPORTS (from ammenities 2.png & ammenities 3.png) ---
+  // --- KIDS PLAYGROUND & SPORTS ---
   {
     id: 'kids-playground',
     captionId: 'Play Ground',
@@ -322,7 +403,7 @@ export const HIGH_RES_PHOTOS: VillaPhoto[] = [
     featured: true,
     aspectRatio: 'portrait',
     sheetSource: 'ammenities 2',
-    url: 'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=2000&q=85'
+    url: '/photos/playground.png'
   },
   {
     id: 'kids-playhouse',
@@ -335,7 +416,7 @@ export const HIGH_RES_PHOTOS: VillaPhoto[] = [
     featured: true,
     aspectRatio: 'landscape',
     sheetSource: 'ammenities 2',
-    url: 'https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&w=2000&q=85'
+    url: '/photos/playhouse.png'
   },
   {
     id: 'kids-ayunan',
@@ -348,7 +429,7 @@ export const HIGH_RES_PHOTOS: VillaPhoto[] = [
     featured: false,
     aspectRatio: 'square',
     sheetSource: 'ammenities 2',
-    url: 'https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=2000&q=85'
+    url: '/photos/ayunan.png'
   },
   {
     id: 'kids-mini-basket',
@@ -361,7 +442,7 @@ export const HIGH_RES_PHOTOS: VillaPhoto[] = [
     featured: false,
     aspectRatio: 'square',
     sheetSource: 'ammenities 2',
-    url: 'https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=2000&q=85'
+    url: '/photos/mini basket.png'
   },
   {
     id: 'sports-meja-pingpong',
@@ -374,7 +455,7 @@ export const HIGH_RES_PHOTOS: VillaPhoto[] = [
     featured: true,
     aspectRatio: 'landscape',
     sheetSource: 'ammenities 3',
-    url: 'https://images.unsplash.com/photo-1534158914592-062992fbe900?auto=format&fit=crop&w=2000&q=85'
+    url: '/photos/meja pingpong.png'
   },
   {
     id: 'sports-jaring-pingpong',
@@ -387,7 +468,7 @@ export const HIGH_RES_PHOTOS: VillaPhoto[] = [
     featured: false,
     aspectRatio: 'portrait',
     sheetSource: 'ammenities 3',
-    url: 'https://images.unsplash.com/photo-1609710228159-0fa9bd7c0827?auto=format&fit=crop&w=2000&q=85'
+    url: '/photos/jaring penangkap bola pingpong.png'
   },
   {
     id: 'sports-basketball',
@@ -400,7 +481,7 @@ export const HIGH_RES_PHOTOS: VillaPhoto[] = [
     featured: false,
     aspectRatio: 'square',
     sheetSource: 'ammenities 3',
-    url: 'https://images.unsplash.com/photo-1519861531473-9200262188bf?auto=format&fit=crop&w=2000&q=85'
+    url: '/photos/basketball.png'
   },
   {
     id: 'sports-volleyball',
@@ -413,7 +494,7 @@ export const HIGH_RES_PHOTOS: VillaPhoto[] = [
     featured: false,
     aspectRatio: 'square',
     sheetSource: 'ammenities 3',
-    url: 'https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?auto=format&fit=crop&w=2000&q=85'
+    url: '/photos/volleyball.png'
   },
   {
     id: 'sports-badminton',
@@ -426,12 +507,12 @@ export const HIGH_RES_PHOTOS: VillaPhoto[] = [
     featured: false,
     aspectRatio: 'square',
     sheetSource: 'ammenities 3',
-    url: 'https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?auto=format&fit=crop&w=2000&q=85'
+    url: '/photos/badminton.png'
   }
 ];
 
 /**
- * 4 Core Master Suites + Dedicated Amenities (Matching rooms.png & bathrooms.png)
+ * 4 Core Master Suites + Dedicated Amenities
  */
 export const VILLA_SUITES: VillaSuite[] = [
   {
@@ -442,435 +523,396 @@ export const VILLA_SUITES: VillaSuite[] = [
     capacity: '4 – 6 Guests',
     bed: '1 King Bed + 2 Twin Beds',
     size: '68 m²',
-    view: 'Direct Heated Pool Terrace & Garden Vista',
+    view: 'Direct Pool Terrace & Garden Vista',
     description: 'Our premier ground-floor family suite featuring 3 luxury beds, gold-veined Italian marble accent wall with warm cove illumination, and direct sliding glass doors opening onto the swimming pool deck.',
     features: [
       '1 King Bed + 2 Twin Beds (Sleeps up to 6)',
       'Direct Sliding Door Access to Pool & BBQ Terrace',
       'En-suite Bathroom 1 with Matte Black Rain Shower',
-      'Illuminated LED Cosmetic Vanity Mirror',
-      'Gold-veined Marble Accent Wall & Ambient Lighting',
-      'Smart TV & Silent Air Conditioning'
+      'Illuminated Floral Recessed Wall Niche',
+      'Smart TV with Netflix & Streaming',
+      'Silent Inverter Air Conditioning & Wardrobe'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1600&q=85',
-    bathroomImageUrl: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1600&q=85',
-    galleryUrls: [
-      'https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1600&q=85',
-      'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1600&q=85'
-    ]
+    imageUrl: '/photos/kamar 1.png',
+    bathroomImageUrl: '/photos/kamar mandi kamar 1.png',
+    galleryUrls: ['/photos/kamar 1.png', '/photos/kamar mandi kamar 1.png', '/photos/kolam renang.png']
   },
   {
     id: 'suite-kamar-2',
     name: 'Deluxe Executive Bedroom 2',
     captionId: 'Kamar 2 & Kamar Mandi 2',
-    type: 'Executive Suite 2',
+    type: 'Deluxe Suite 2 (Upper Floor)',
     capacity: '2 – 3 Guests',
-    bed: '1 King Bed + 1 Single Bed',
-    size: '54 m²',
-    view: 'Highland Forest & Garden Courtyard',
-    description: 'A sophisticated sanctuary featuring a breathtaking dark grey & liquid gold abstract mural wall, floor-to-ceiling sheer white drapes, dedicated wooden workstation with ergonomic swivel chair, and modern en-suite.',
+    bed: '1 King Bed + 1 Extra Single Bed',
+    size: '52 m²',
+    view: 'Panoramic Highland Forest & Sunset View',
+    description: 'Sophisticated executive suite adorned with an artistic liquid gold & charcoal grey mural, plush king bedding, dedicated workstation, and high-ceiling highland ventilation.',
     features: [
       '1 King Bed + 1 Single Bed',
-      'Executive Workstation (Meja Kerja) with Ergonomic Chair',
-      'En-suite Bathroom 2 with Black Rain Shower',
-      'Wall-mounted Flat Screen TV on Timber Panel',
-      'Floor-to-ceiling Drapes & Panoramic Daylight',
-      'High-Speed Wi-Fi (150 Mbps)'
+      'Meja Kerja Workstation with Ergonomic Chair',
+      'En-suite Bathroom 2 with Natural Mountain Air Ventilation',
+      'Illuminated LED Backlit Vanity Mirror',
+      'Floor-to-Ceiling Thermal Insulated Drapes',
+      'High-Speed Dedicated Mesh Wi-Fi (50 Mbps)'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1600&q=85',
-    bathroomImageUrl: 'https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1600&q=85',
-    galleryUrls: [
-      'https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1600&q=85',
-      'https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1600&q=85'
-    ]
+    imageUrl: '/photos/kamar 2.png',
+    bathroomImageUrl: '/photos/kamar mandi kamar 2.png',
+    galleryUrls: ['/photos/kamar 2.png', '/photos/kamar mandi kamar 2.png', '/photos/meja kerja.png']
   },
   {
     id: 'suite-kamar-3',
-    name: 'Mountain Panorama Terrace Suite 3',
+    name: 'Mountain Panorama Suite 3',
     captionId: 'Kamar 3 & Kamar Mandi 3',
-    type: 'Scenic View Suite 3',
-    capacity: '2 – 3 Guests',
+    type: 'Panoramic Suite 3 (Upper Floor)',
+    capacity: '2 Guests',
     bed: '1 Queen Bed',
     size: '48 m²',
-    view: 'Unobstructed Mount Gede & Valley Panorama',
-    description: 'Designed for panoramic romance and tranquil mornings. Features a grey vertical upholstered headboard, marble feature wall, and private sliding glass walk-out balcony overlooking misty Puncak tea valleys.',
+    view: 'Private Balcony overlooking Mount Gede & Valley',
+    description: 'Romantic highland retreat with custom vertical padded grey headboard, gold-veined marble wall, private balcony overlooking the mist-covered mountains, and en-suite bath.',
     features: [
-      '1 Queen Bed with Designer Headboard',
-      'Private Walk-out Balcony with Artificial Grass Deck',
-      'En-suite Bathroom 3 with Black Framed Glass Shower',
-      'Floor-to-ceiling Valley Glass Sliding Doors',
-      'Morning Mist Sunrise View',
-      'Silent Air Conditioning & Reading Lamps'
+      '1 Queen Bed with Cloud-Pillow Top Mattress',
+      'Private Terrace Balcony with Teak Coffee Chairs',
+      'En-suite Bathroom 3 with Floating Wood Cabinet',
+      'Black Matte Glass Partition Shower',
+      'Fresh Mountain Breeze Cross-Ventilation',
+      'Reading Sconces & Bedside USB-C Fast Chargers'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1600&q=85',
-    bathroomImageUrl: 'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1600&q=85',
-    galleryUrls: [
-      'https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1600&q=85',
-      'https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1600&q=85'
-    ]
+    imageUrl: '/photos/kamar 3.png',
+    bathroomImageUrl: '/photos/kamar mandi kamar 3.png',
+    galleryUrls: ['/photos/kamar 3.png', '/photos/kamar mandi kamar 3.png', '/photos/gazebo.png']
   },
   {
     id: 'suite-kamar-4',
-    name: 'Grand Double Queen Suite 4',
+    name: 'Grand Double Suite 4',
     captionId: 'Kamar 4 & Kamar Mandi 4',
-    type: 'Grand Family Suite 4',
-    capacity: '4 – 5 Guests',
-    bed: '2 Queen Beds + Sofa',
-    size: '62 m²',
-    view: 'Highland Garden & Pine Tree Canopy',
-    description: 'A spacious multi-bed grand room with 2 Queen beds, black & gold abstract wall art, comfortable beige lounge sofa, integrated makeup vanity (Meja Rias), and access to the double-sink luxury master bath.',
+    type: 'Double Queen Suite 4',
+    capacity: '4 Guests',
+    bed: '2 Queen Beds',
+    size: '58 m²',
+    view: 'Courtyard Garden & Mountain Skyline',
+    description: 'Expansive shared suite featuring two queen beds, gold abstract art wall, comfortable armchairs lounge corner, and the largest master bathroom with double sinks.',
     features: [
-      '2 Queen Beds (160x200) + Loveseat Lounge Sofa',
-      'En-suite Bathroom 4 with Double Vessel Sinks',
-      'Integrated Dressing Vanity (Meja Rias) with Backlit Mirror',
-      'Floor-to-ceiling Curtained Windows',
-      'Spacious Wardrobes & Luggage Bench',
-      'Smart TV 4K & Premium Linens'
+      '2 Queen Beds with Premium Hypoallergenic Linens',
+      'Grand En-suite 4 with Double Vessel Sinks on Black Quartz',
+      'Cozy Velvet Armchair Reading Lounge Corner',
+      'Meja Rias Built-in Cosmetic Vanity Station',
+      'Extra Wide Backlit LED Cosmetic Mirror',
+      'Large Luggage Staging Rack & Built-in Closets'
     ],
-    imageUrl: 'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1600&q=85',
-    bathroomImageUrl: 'https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1600&q=85',
-    galleryUrls: [
-      'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1600&q=85',
-      'https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=1600&q=85'
-    ]
+    imageUrl: '/photos/kamar 4.png',
+    bathroomImageUrl: '/photos/kamar mandi kamar 4.png',
+    galleryUrls: ['/photos/kamar 4.png', '/photos/kamar mandi kamar 4.png', '/photos/meja rias.png']
   }
 ];
 
-/**
- * Categorized Amenities & Equipment corresponding to the user's photo sheets
- */
 export const AMENITY_CATEGORIES: AmenityCategory[] = [
   {
     category: 'BBQ & Al-Fresco Dining',
-    captionId: 'Area Barbeque & Peralatan BBQ (ammenities.png)',
+    captionId: 'Sheet ammenities.png',
     iconName: 'Flame',
     sheetSource: 'ammenities.png',
     items: [
-      { 
-        name: 'Area Barbeque Terrace', 
+      {
+        name: 'Area Barbeque (Al-Fresco Terrace)',
         captionId: 'Area Barbeque',
-        description: 'Large covered al-fresco terrace with 20-person solid wood dining table, woven chairs, and poolside loungers', 
+        description: '20-seat solid timber dining table, poolside sun loungers, and mountain valley views.',
         highlight: true,
-        equipment: 'Solid Wood Banquet Table (20 Pax)'
+        equipment: '20-Seat Long Table + Sun Loungers'
       },
-      { 
-        name: 'Alat Pemanggang Arang', 
+      {
+        name: 'Alat Pemanggang Arang (Charcoal Grill)',
         captionId: 'Alat Pemanggang Arang',
-        description: 'Free-standing black charcoal barbecue smoker barrel grill on lawn for smoky satay and steaks', 
+        description: 'Heavy-duty black barrel charcoal smoker grill with adjustable height grate.',
         highlight: true,
-        equipment: 'Heavy-Duty Charcoal Grill + Lid'
+        equipment: 'Stand-up Smoker Grill + Charcoal Grate'
       },
-      { 
-        name: 'Alat Pemanggang Gas', 
+      {
+        name: 'Alat Pemanggang Gas (Gas Grill)',
         captionId: 'Alat Pemanggang Gas',
-        description: 'Stainless steel 2-burner gas grill with dual rotary dials and prep side tables', 
+        description: 'Dual-burner stainless steel gas grill with ignition knobs and side food prep tables.',
         highlight: true,
-        equipment: '2-Burner Stainless Gas BBQ'
+        equipment: '2-Burner Stainless Steel BBQ Grill'
       },
-      { 
-        name: 'Peralatan BBQ & Shabu Set', 
+      {
+        name: 'Peralatan BBQ & Korean Hotpot Kit',
         captionId: 'Peralatan BBQ',
-        description: 'Portable gas stoves with non-stick Korean BBQ griddle pan, stainless shabu-shabu pot, tongs, spatulas, and skewers', 
+        description: 'Portable gas stoves with Korean non-stick grill pans, stainless shabu-shabu soup pot with glass lid, tongs, and skewers.',
         highlight: true,
-        equipment: 'Korean Grill Plate + Shabu Hotpot + Portable Stoves'
+        equipment: 'Korean Grill + Shabu Pot + Tongs'
       }
     ]
   },
   {
-    category: 'Outdoor Leisure, Pool & Lounge',
-    captionId: 'Kolam Renang, Billiard & Pendopo (ammenities 4.png)',
+    category: 'Outdoor Leisure, Pool & Lounges',
+    captionId: 'Sheet ammenities 4.png',
     iconName: 'Waves',
     sheetSource: 'ammenities 4.png',
     items: [
-      { 
-        name: 'Kolam Renang (Swimming Pool)', 
+      {
+        name: 'Kolam Renang (Private Swimming Pool)',
         captionId: 'Kolam Renang',
-        description: 'Private crystal turquoise pool with stainless ladder, sun deck loungers, and mountain vistas', 
+        description: 'Crystal turquoise inground pool with stainless steel ladder and scenic deck.',
         highlight: true,
-        equipment: 'Private Inground Pool & Sun Deck'
+        equipment: 'Swimming Pool with Water Circulation'
       },
-      { 
-        name: 'Meja Billiard (Terrace View)', 
+      {
+        name: 'Meja Billiard (Terrace Pool Table)',
         captionId: 'Meja Billiard',
-        description: 'Full-size slate billiard table with vibrant royal blue cloth, wooden cues, and balls on the open-air terrace', 
+        description: 'Full-size outdoor billiard table with vibrant royal blue felt, wooden cues, and balls on the terrace.',
         highlight: true,
-        equipment: '9ft Slate Billiards with Blue Felt'
+        equipment: '9ft Blue Felt Slate Billiard Table'
       },
-      { 
-        name: 'Area Api Unggun (Bonfire Pit)', 
+      {
+        name: 'Area Api Unggun (Lawn Bonfire Pit)',
         captionId: 'Area Api Unggun',
-        description: 'Central black metal fire bowl surrounded by circular black iron benches and armchairs on the green lawn', 
+        description: 'Metal central fire pit surrounded by wrought iron garden benches on the manicured lawn for evening gatherings.',
         highlight: true,
-        equipment: 'Garden Fire Pit + Iron Benches'
+        equipment: 'Fire Pit + Wrought Iron Garden Chairs'
       },
-      { 
-        name: 'Pendopo Royal Hill Lounge', 
+      {
+        name: 'Pendopo (Signature Heritage Lounge)',
         captionId: 'Pendopo',
-        description: 'Signature semi-outdoor lounge with carved Royal Hill wooden wall, two burgundy peacock rattan armchairs, and sectional sofa', 
+        description: 'Semi-outdoor wooden lounge with "ROYAL HILL VILLA PUNCAK" carved wooden wall and 2 peacock rattan chairs.',
         highlight: true,
-        equipment: 'Branded Wood Wall + Rattan Peacock Chairs'
+        equipment: 'Peacock Rattan Armchairs + Plush Sofa'
       },
-      { 
-        name: 'Gazebo Saung Taman', 
+      {
+        name: 'Gazebo (Garden Saung)',
         captionId: 'Gazebo',
-        description: 'Traditional wooden garden pavilion with bamboo shades, bench seating, and stone steps among floral landscaping', 
+        description: 'Traditional wooden saung with roll-up bamboo blinds, stone garden steps, and flower beds.',
         highlight: false,
         equipment: 'Wooden Saung + Bamboo Blinds'
       }
     ]
   },
   {
-    category: 'Sports & Active Games',
-    captionId: 'Meja Pingpong, Basketball, Voli, Badminton (ammenities 3.png)',
+    category: 'Sports & Active Entertainment',
+    captionId: 'Sheet ammenities 3.png',
     iconName: 'Trophy',
     sheetSource: 'ammenities 3.png',
     items: [
-      { 
-        name: 'Meja Pingpong (Table Tennis)', 
+      {
+        name: 'Meja Pingpong (Nextsist 22 Table Tennis)',
         captionId: 'Meja Pingpong',
-        description: 'Blue Nextsist 22 tournament table tennis table with net, wooden rackets, and balls in courtyard', 
+        description: 'High-grade blue competition table tennis with tournament net, paddles, and balls on the paved court.',
         highlight: true,
-        equipment: 'Nextsist 22 Ping Pong Table'
+        equipment: 'Nextsist 22 Table + Paddles & Balls'
       },
-      { 
-        name: 'Jaring Penangkap Bola Pingpong', 
+      {
+        name: 'Jaring Penangkap Bola Pingpong',
         captionId: 'Jaring Penangkap Bola Pingpong',
-        description: 'PVC framed blue netting chute for table tennis practice and automatic ball collection', 
+        description: 'Catch net frame with return chute for non-stop table tennis practice without ball chasing.',
         highlight: false,
-        equipment: 'Ball Return Netting System'
+        equipment: 'PVC Return Chute & Ball Collector Net'
       },
-      { 
-        name: 'Basketball Court & Hoop', 
+      {
+        name: 'Basketball Court & Hoop',
         captionId: 'Basketball',
-        description: 'Outdoor basketball backboard and hoop on paved driveway court with regulation orange basketball', 
-        highlight: true,
-        equipment: 'Driveway Basketball Court'
-      },
-      { 
-        name: 'Lawn Volleyball Net', 
-        captionId: 'Volleyball',
-        description: 'Competition outdoor grass volleyball net setup with official Mikasa competition volleyball', 
-        highlight: true,
-        equipment: 'Grass Volleyball Net + Mikasa Ball'
-      },
-      { 
-        name: 'Badminton Sets', 
-        captionId: 'Badminton',
-        description: 'Tournament badminton racquets and feathered shuttlecocks for friendly morning garden games', 
+        description: 'Paved basketball area with standard backboard & hoop with mountain views.',
         highlight: false,
-        equipment: 'Badminton Racquets & Shuttles'
+        equipment: 'Driveway Hoop + Regulation Basketball'
+      },
+      {
+        name: 'Volleyball Lawn Court',
+        captionId: 'Volleyball',
+        description: 'Grass court with regulation volleyball net and Mikasa competition ball.',
+        highlight: false,
+        equipment: 'Volleyball Net + Mikasa Competition Ball'
+      },
+      {
+        name: 'Badminton Sets',
+        captionId: 'Badminton',
+        description: 'Multiple tournament badminton rackets and shuttlecocks for cool mountain morning games.',
+        highlight: false,
+        equipment: 'Badminton Rackets + Tube Shuttlecocks'
       }
     ]
   },
   {
-    category: 'Kids Playground & Adventure',
-    captionId: 'Playground, Playhouse, Ayunan, Mini Basket (ammenities 2.png)',
+    category: 'Kids Playground & Playhouses',
+    captionId: 'Sheet ammenities 2.png',
     iconName: 'Smile',
     sheetSource: 'ammenities 2.png',
     items: [
-      { 
-        name: 'Play Ground (Tire Climbing Tower)', 
+      {
+        name: 'Play Ground (Tire Climbing Tower)',
         captionId: 'Play Ground',
-        description: 'Multi-level tire obstacle climbing tower featuring colorful red, yellow, blue, and green tires on steel pillars', 
+        description: 'Vibrant red, yellow, blue, and green tire climbing structure on sturdy black steel pillars.',
         highlight: true,
-        equipment: '4-Color Tire Climbing Tower'
+        equipment: 'Multi-Color Tire Climbing Rig'
       },
-      { 
-        name: 'Playhouse (Kids Adventure Castle)', 
+      {
+        name: 'Playhouse (Kids Castle & Dual Slide)',
         captionId: 'Playhouse',
-        description: 'Colorful play cottage with dual slides (blue wavy & green), crawl tunnel, lookout tower, and soft safety rubber floor tiles', 
+        description: 'Kids activity cottage with wavy blue & green slides, tower, tunnel, and soft interlocking rubber safety mats.',
         highlight: true,
-        equipment: 'Multi-Slide Playhouse + Soft Mat'
+        equipment: 'Dual Slide Castle + EVA Rubber Mats'
       },
-      { 
-        name: 'Ayunan (Floral Circle Swing)', 
+      {
+        name: 'Ayunan (Floral Hoop Swing)',
         captionId: 'Ayunan',
-        description: 'Romantic circular hoop swing wrapped with bright flower garlands on heavy-duty steel frame over lawn', 
-        highlight: true,
-        equipment: 'Decorated Floral Ring Swing'
-      },
-      { 
-        name: 'Mini Basket (Toddler Hoop)', 
-        captionId: 'Mini Basket',
-        description: 'Freestanding blue metal toddler basketball hoop with net on grass for little ones', 
+        description: 'Circular ring swing adorned with colorful floral garlands on the scenic grass lawn.',
         highlight: false,
-        equipment: 'Kids Toddler Basketball Hoop'
+        equipment: 'Heavy-Duty Metal Frame + Floral Hoop'
+      },
+      {
+        name: 'Mini Basket (Toddler Basketball)',
+        captionId: 'Mini Basket',
+        description: 'Freestanding blue toddler basketball hoop on the grass for fun family play.',
+        highlight: false,
+        equipment: 'Junior Basketball Stand & Ball'
       }
     ]
   },
   {
-    category: 'Bathrooms & Accessibility Safety',
-    captionId: 'Kamar Mandi 1-4, Toilet Tamu, Kursi Lipat (bathrooms.png)',
-    iconName: 'ShieldCheck',
+    category: 'Bathrooms & Hygiene Care',
+    captionId: 'Sheet bathrooms.png',
+    iconName: 'Bath',
     sheetSource: 'bathrooms.png',
     items: [
-      { 
-        name: '4 Luxury En-suite Bathrooms', 
-        captionId: 'Kamar Mandi Kamar 1, 2, 3, 4',
-        description: 'Each bedroom features private en-suite with floating wood vanities, backlit LED mirrors, matte black rain showers, and hot water', 
+      {
+        name: 'Kamar Mandi 1, 2, 3 & 4 (4 En-suite Bathrooms)',
+        captionId: 'Kamar Mandi Kamar 1-4',
+        description: 'Private en-suite bathroom in every bedroom featuring black rain showers, glass partitions, and LED mirrors.',
         highlight: true,
-        equipment: '4 Private En-suite Bathrooms'
+        equipment: 'Matte Black Rain Showers + LED Mirrors'
       },
-      { 
-        name: 'Toilet Tamu (Guest Powder Room)', 
+      {
+        name: 'Toilet Tamu (Guest Powder Room)',
         captionId: 'Toilet Tamu',
-        description: 'Convenient guest bathroom with dark fluted wall paneling and illuminated floral wall niche', 
+        description: 'Stylish guest powder room with dark vertical fluted wall and illuminated recessed flower niche.',
         highlight: true,
-        equipment: 'Fluted Wall Half-Bath'
+        equipment: 'Fluted Accent Wall + Recessed Niche'
       },
-      { 
-        name: 'Kursi Lipat Mandi (Elderly Safety Seat)', 
+      {
+        name: 'Kursi Lipat Mandi (Elderly Accessible Seat)',
         captionId: 'Kursi Lipat Mandi',
-        description: 'Wall-mounted heavy-duty folding shower seat ensuring maximum comfort and safety for seniors and toddlers', 
+        description: 'Wall-mounted heavy-duty foldable shower seat providing supreme safety for elderly guests.',
         highlight: true,
-        equipment: 'Accessible Folding Shower Bench'
+        equipment: 'Wall-Mounted Foldable Safety Seat'
       },
-      { 
-        name: 'Rak & Jet Shower Bidets', 
+      {
+        name: 'Rak & Jet Shower (Hygienic Bidets)',
         captionId: 'Rak & Jet Shower',
-        description: 'Matte black stainless towel drying racks, high-pressure bidet jet sprays, and complimentary toiletries in all bathrooms', 
+        description: 'High-pressure bidet jet sprays, matte black towel rails, and hotel-grade toiletries.',
         highlight: false,
-        equipment: 'Bidet Sprayers & Towel Racks'
+        equipment: 'Hygienic Jet Spray + Multi-Tier Towel Rack'
       }
     ]
   }
 ];
 
-export const SURROUNDING_ATTRACTIONS: AttractionItem[] = [
+export const NEARBY_ATTRACTIONS: AttractionItem[] = [
   {
-    name: 'Agrowisata Gunung Mas Tea Estate',
-    distance: '3.2 km',
-    travelTime: '8 mins',
-    category: 'Nature & Tea Walk',
-    description: 'Endless rolling emerald tea plantations, horseback riding, tea factory tour, and tea bridge walk.',
-    imageUrl: 'https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?auto=format&fit=crop&w=800&q=80'
-  },
-  {
-    name: 'Taman Safari Indonesia Cisarua',
-    distance: '5.8 km',
+    name: 'Taman Safari Indonesia',
+    distance: '6.2 km',
     travelTime: '15 mins',
     category: 'Wildlife & Safari',
-    description: 'World-famous drive-thru animal safari park, panda palace, night safari, and amusement park.',
+    description: 'Famous drive-through wildlife park featuring exotic animals, night safaris, and panda sanctuary.',
     imageUrl: 'https://images.unsplash.com/photo-1534567153574-2b12153a87f0?auto=format&fit=crop&w=800&q=80'
   },
   {
-    name: 'Telaga Saat Puncak',
-    distance: '4.5 km',
-    travelTime: '12 mins',
-    category: 'Scenic Lake & Hills',
-    description: 'Hidden zero-kilometer Ciliwung highland lake surrounded by morning mist and tea hills.',
-    imageUrl: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80'
+    name: 'Gunung Mas Tea Plantation & Agro Tourism',
+    distance: '3.8 km',
+    travelTime: '8 mins',
+    category: 'Tea Walks & Horseback',
+    description: 'Vast emerald tea fields offering serene tea walks, horseback riding, and tea tasting.',
+    imageUrl: 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80'
   },
   {
-    name: 'Cimory Dairyland & Riverside Puncak',
+    name: 'Kebun Raya Cibodas & Sakura Garden',
+    distance: '14.5 km',
+    travelTime: '25 mins',
+    category: 'Botanical Gardens',
+    description: 'Expansive highland botanical reserve at the foot of Mount Gede with lush subtropical flora.',
+    imageUrl: 'https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    name: 'Telaga Saat Puncak (Zero Point Ciliwung)',
     distance: '7.1 km',
     travelTime: '18 mins',
-    category: 'Family Dining & Fun',
-    description: 'Interactive petting farm, scenic riverside restaurant, fresh milk, and chocolate factory.',
-    imageUrl: 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80'
+    category: 'Scenic Mountain Lake',
+    description: 'Enchanting natural lake nestled high in tea hills, surrounded by mist and reflection viewpoints.',
+    imageUrl: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80'
   }
 ];
 
 export const GUEST_TESTIMONIALS: Testimonial[] = [
   {
     id: 'rev-1',
-    guestName: 'Hendrawan Kusuma & Family',
+    guestName: 'Bapak Hendra & Keluarga Besar',
     origin: 'Jakarta Selatan',
-    stayType: 'Family Gathering (22 Guests)',
+    stayType: 'Family Gathering (22 Orang)',
     rating: 5,
-    date: 'August 2026',
-    comment: 'The most extraordinary villa experience we have ever had in Puncak! The long wooden BBQ table comfortably fit all 20 of us, the kids went crazy for the playhouse and tire climbing tower, and the outdoor billiard table by the pool with the mountain breeze was unbeatable.',
+    date: 'Agustus 2026',
+    comment: 'Villa sangat bersih dan persis dengan foto-fotonya! Semua 4 kamar tidur sangat luas, kamar mandi ada di setiap kamar + ada kursi lipat lansia yang sangat membantu orang tua kami. Fasilitas BBQ dan meja billiard luar biasa.',
     verified: true
   },
   {
     id: 'rev-2',
-    guestName: 'PT Nusantara Digital Retreat',
+    guestName: 'Ibu Ratna & Rekan Kantor',
     origin: 'BSD City, Tangerang',
-    stayType: 'Corporate Leadership Offsite (18 Pax)',
+    stayType: 'Company Executive Retreat (18 Orang)',
     rating: 5,
-    date: 'July 2026',
-    comment: 'Flawless venue for our team retreat. The table tennis with ball net, volleyball on the lawn, and evening bonfire with iron benches were highlights. The dedicated workstation in Kamar 2 with high-speed fiber Wi-Fi made workations effortless.',
+    date: 'Juli 2026',
+    comment: 'Pemesanan lewat WhatsApp sangat responsif dan ramah (+6281212855640). Meja kerja dan Wi-Fi cepat untuk sesi workation kami. Anak-anak sangat betah di playground dan lapangan basket & pingpong.',
     verified: true
   },
   {
     id: 'rev-3',
-    guestName: 'Clarissa & Jonathan',
-    origin: 'Kelapa Gading, Jakarta',
-    stayType: 'Extended Family Weekend Getaway',
+    guestName: 'Kevin Wijaya',
+    origin: 'Bandung',
+    stayType: 'Weekend Getaway',
     rating: 5,
-    date: 'July 2026',
-    comment: 'We were so impressed with the attention to detail! The accessible folding shower seat (Kursi Lipat Mandi) made the stay safe and easy for my elderly grandmother. Both the charcoal grill and Korean BBQ hotpot gear were super clean and complete!',
+    date: 'Agustus 2026',
+    comment: 'Suasana sejuk 19°C di Puncak dengan pemandangan gunung langsung dari pendopo dan kolam renang. Alat BBQ gas dan arangnya sangat lengkap, tinggal bawa daging saja. Pasti akan kembali lagi!',
     verified: true
   }
 ];
 
 export const VILLA_FAQS = [
   {
-    question: 'How do I check availability and make a reservation?',
-    answer: 'Direct reservations are managed seamlessly via our official WhatsApp hotline (+62 812-1285-5640). Simply select your desired dates on our inquiry widget or message us directly. Our host will confirm availability, rate calculation, and lock in your reservation with a 50% deposit via bank transfer.'
+    q: 'Berapa jam check-in dan check-out di Royal Hill Villa?',
+    a: 'Waktu standard Check-in adalah pukul 15:00 WIB dan Check-out adalah pukul 12:00 WIB. Penyesuaian waktu lebih awal atau lebih lambat (early check-in / late check-out) dapat dikoordinasikan terlebih dahulu melalui WhatsApp tergantung ketersediaan jadwal.'
   },
   {
-    question: 'What is the bedroom & bed setup in Royal Hill Villa?',
-    answer: 'The villa features 4 Grand Master Suites with en-suite bathrooms: Kamar 1 (1 King + 2 Twin Beds, pool access), Kamar 2 (1 King + 1 Single Bed, executive desk), Kamar 3 (1 Queen Bed, mountain balcony), and Kamar 4 (2 Queen Beds, lounge sofa). In total, the villa accommodates 20 to 25+ guests comfortably with extra beds.'
+    q: 'Bagaimana cara booking langsung ke Royal Hill Villa?',
+    a: 'Anda dapat langsung memesan via WhatsApp resmi di +62 812-1285-5640 tanpa biaya perantara OTA. Tim reservasi kami siap melayani cek tanggal ketersediaan, perhitungan harga grup, dan detail fasilitas 24/7.'
   },
   {
-    question: 'What BBQ and cooking equipment are provided?',
-    answer: 'We provide complete grilling and cooking facilities at no extra charge: 1 Large Charcoal Smoker Barrel Grill (Alat Pemanggang Arang), 1 2-Burner Stainless Gas BBQ (Alat Pemanggang Gas), and portable gas cookers with Korean non-stick grill pans & Shabu-Shabu hotpot pots with tongs, skewers, and spatulas.'
+    q: 'Apakah semua 4 Kamar Tidur memiliki Kamar Mandi Dalam (En-suite)?',
+    a: 'Ya, seluruh 4 Kamar Tidur (Kamar 1, Kamar 2, Kamar 3, dan Kamar 4) dilengkapi dengan kamar mandi privat di dalam kamar (shower air panas, rain shower, dan wastafel). Terdapat juga 1 Toilet Tamu tambahan serta Kursi Lipat Mandi untuk lansia.'
   },
   {
-    question: 'What outdoor sports & children facilities are available on-site?',
-    answer: 'The villa includes a full-size outdoor slate Billiard table, Nextsist 22 Table Tennis with practice ball catch net, Driveway Basketball hoop, Lawn Volleyball court with Mikasa ball, Badminton sets, 4-tier Tire Climbing Tower, Multi-slide Children Playhouse with safety rubber mats, Flower Ring Swing, and Toddler Mini Basketball.'
+    q: 'Peralatan BBQ apa saja yang disediakan di villa?',
+    a: 'Kami menyediakan Alat Pemanggang Arang (charcoal barrel smoker), Alat Pemanggang Gas 2 tungku, serta set kompor portable dengan wajan Korean BBQ & panci kuah Shabu-Shabu hotpot beserta capitan dan tusukan sate lengkap.'
   },
   {
-    question: 'Are the bathrooms accessible for elderly or disabled guests?',
-    answer: 'Yes! All 4 en-suite bathrooms feature step-free walk-in showers, and we have installed heavy-duty wall-mounted foldable shower seats (Kursi Lipat Mandi) to ensure safe and comfortable bathing for seniors and children.'
+    q: 'Fasilitas olahraga dan anak apa saja yang tersedia?',
+    a: 'Fasilitas mencakup Meja Billiard karpet biru, Meja Pingpong Nextsist 22 dengan jaring penangkap bola otomatis, Ring Basket & Court, Jaring Bola Voli & Bola Mikasa, Raket Badminton, serta Playground anak bertingkat ban warna-warni, Playhouse perosotan, Ayunan bunga, dan Mini Basket balita.'
   },
   {
-    question: 'What are the check-in and check-out times?',
-    answer: 'Standard check-in is at 14:00 (2:00 PM) and check-out is at 12:00 (12:00 PM). Early check-in or late check-out can be arranged complimentary via WhatsApp, subject to villa schedule on that day.'
-  },
-  {
-    question: 'Are there staff on-site to help us during our stay?',
-    answer: 'Yes, 2 dedicated professional resident butlers are on-site 24/7 to assist with luggage, lighting the bonfire and BBQ charcoal, dishwashing, and maintaining clean common areas.'
+    q: 'Berapa kapasitas tamu maksimal di Royal Hill Villa?',
+    a: 'Kapasitas standar sangat nyaman untuk 16 hingga 25 tamu keluarga atau rombongan gathering dengan konfigurasi bed yang luas (King beds, Queen beds, dan Twin beds) plus ruang tamu yang lapang.'
   }
 ];
 
 export function buildWhatsAppLink(inquiry: Partial<BookingInquiry>): string {
-  const parts: string[] = [];
-  parts.push(`*ROYAL HILL VILLA PUNCAK - DIRECT BOOKING INQUIRY* 🏔️✨`);
-  parts.push(`Halo Admin Royal Hill Villa (+6281212855640), saya ingin menanyakan reservasi villa:\n`);
-  
-  if (inquiry.guestName) {
-    parts.push(`👤 *Nama Tamu:* ${inquiry.guestName}`);
-  }
-  if (inquiry.guestPhone) {
-    parts.push(`📱 *Kontak:* ${inquiry.guestPhone}`);
-  }
-  if (inquiry.checkIn && inquiry.checkOut) {
-    parts.push(`📅 *Tanggal Check-in:* ${inquiry.checkIn}`);
-    parts.push(`📅 *Tanggal Check-out:* ${inquiry.checkOut}`);
-  } else if (inquiry.checkIn) {
-    parts.push(`📅 *Tanggal Rencana:* ${inquiry.checkIn}`);
-  }
-  
-  if (inquiry.guests) {
-    parts.push(`👥 *Jumlah Tamu:* ${inquiry.guests} Orang (Entire Villa 4 Grand Suites + Living)`);
-  }
-  
-  if (inquiry.eventType) {
-    parts.push(`🎉 *Tipe Acara/Kunjungan:* ${inquiry.eventType}`);
-  }
-  
-  if (inquiry.addOns && inquiry.addOns.length > 0) {
-    parts.push(`✨ *Pilihan Fasilitas/Add-on:* ${inquiry.addOns.join(', ')}`);
-  }
-  
-  if (inquiry.notes) {
-    parts.push(`📝 *Catatan / Request:* ${inquiry.notes}`);
-  }
-  
-  parts.push(`\nMohon info ketersediaan tanggal, promo direct booking, dan invoice rincian. Terima kasih! 🙏`);
-  
-  const message = parts.join('\n');
+  const checkIn = inquiry.checkIn || 'Tanggal Fleksibel';
+  const checkOut = inquiry.checkOut || 'Tanggal Fleksibel';
+  const guests = inquiry.guests || 18;
+  const event = inquiry.eventType || 'Family Gathering';
+  const name = inquiry.guestName ? inquiry.guestName : 'Calon Tamu';
+
+  const message = `Halo Royal Hill Villa (+6281212855640), saya ${name}.
+
+Saya ingin menanyakan ketersediaan villa & reservasi:
+• Check-in: ${checkIn}
+• Check-out: ${checkOut}
+• Jumlah Tamu: ${guests} Orang (Entire Villa 4 Master Suites)
+• Tipe Acara: ${event}
+${inquiry.notes ? `• Permintaan Khusus / Catatan: ${inquiry.notes}\n` : ''}
+Mohon informasi ketersediaan tanggal dan total penawaran harga terbaik. Terima kasih!`;
+
   return `https://wa.me/${VILLA_WHATSAPP_CLEAN}?text=${encodeURIComponent(message)}`;
 }

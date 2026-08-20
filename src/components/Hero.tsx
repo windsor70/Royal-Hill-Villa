@@ -92,7 +92,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenGallery, onOpenBooking }) => {
             Ethereal Comfort in the Clouds
           </h1>
           <p className="text-[#FDFBF7] text-base sm:text-lg lg:text-xl font-light max-w-2xl leading-relaxed text-balance drop-shadow">
-            An exclusive 2,500 m² private mountain estate in Puncak. Featuring 4 Grand Master Suites with en-suites, swimming pool, terrace billiards, complete BBQ & Korean hotpot station, fire pit, playground, and 24/7 dedicated butler service.
+            An exclusive 2,500 m² private mountain estate in Puncak. Featuring 4 Grand Master Suites with en-suites, swimming pool, terrace billiards, complete BBQ & Korean hotpot station, fire pit, playground, and 2 on-site staff available for your assistance.
           </p>
         </div>
 
@@ -245,8 +245,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenGallery, onOpenBooking }) => {
               <p className="text-[#7D7768] text-xs uppercase tracking-widest">Pingpong, Basket, Voli, Swing</p>
             </div>
             <div>
-              <p className="text-[#3D3A35] font-serif italic font-bold text-lg sm:text-xl">24/7 Butler</p>
-              <p className="text-[#7D7768] text-xs uppercase tracking-widest">Dedicated Staff on Site</p>
+              <p className="text-[#3D3A35] font-serif italic font-bold text-lg sm:text-xl">2 On-Site Staff</p>
+              <p className="text-[#7D7768] text-xs uppercase tracking-widest">Resident Assistance</p>
             </div>
           </div>
         </div>

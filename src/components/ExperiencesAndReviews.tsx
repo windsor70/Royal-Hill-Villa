@@ -28,10 +28,10 @@ export const ExperiencesAndReviews: React.FC = () => {
               <Coffee className="w-5 h-5" />
             </div>
             <h4 className="font-serif italic font-bold text-[#3D3A35] text-lg">
-              Infinity Floating Breakfast
+              Poolside Breakfast & Coffee
             </h4>
             <p className="text-[#5C584A] text-xs leading-relaxed">
-              Drift across our heated pool while savoring fresh tropical fruits, bakery croissants, and mountain-brewed coffee.
+              Relax by our sparkling swimming pool while savoring fresh tropical fruits, bakery croissants, and mountain-brewed coffee.
             </p>
           </div>
 
@@ -52,10 +52,10 @@ export const ExperiencesAndReviews: React.FC = () => {
               <Film className="w-5 h-5" />
             </div>
             <h4 className="font-serif italic font-bold text-[#3D3A35] text-lg">
-              Midnight Cinema & Karaoke
+              Smart TV & Karaoke Lounge
             </h4>
             <p className="text-[#5C584A] text-xs leading-relaxed">
-              Sing your heart out with 50,000+ tracks or stream 4K movies on our 120-inch laser projector with deep surround sound.
+              Sing your heart out with your favorite tracks or stream movies and shows on the Smart TV with crisp audio.
             </p>
           </div>
 
@@ -124,7 +124,7 @@ export const ExperiencesAndReviews: React.FC = () => {
               Need a Custom Setup for Your Gathering?
             </h3>
             <p className="text-[#5C584A] text-sm max-w-xl mt-1 leading-relaxed">
-              Our reservation manager is ready on WhatsApp to assist with birthday cakes, in-villa acoustic musicians, custom Sundanese menus, or corporate projector setups.
+              Our reservation manager is ready on WhatsApp to assist with birthday cakes, in-villa acoustic musicians, custom Sundanese menus, or corporate gathering setups.
             </p>
           </div>
 

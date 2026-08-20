@@ -1,17 +1,8 @@
 import React, { useState } from 'react';
 import { VILLA_WHATSAPP_CLEAN, VILLA_WHATSAPP_DISPLAY, VILLA_WHATSAPP_RAW, buildWhatsAppLink } from '../data/villaData';
 import { BookingInquiry } from '../types';
-import { MessageCircle, Phone, Calendar, Users, Sparkles, Copy, Check, ShieldCheck, Flame, Coffee, Utensils, HeartHandshake, QrCode, ArrowRight, Clock, HelpCircle, Trophy, Waves } from 'lucide-react';
+import { MessageCircle, Phone, Calendar, Users, Sparkles, Copy, Check, ShieldCheck, HeartHandshake, QrCode, ArrowRight, Clock, HelpCircle, Trophy, Waves } from 'lucide-react';
 import { RoyalHillLogo } from './RoyalHillLogo';
-
-const ADD_ON_OPTIONS = [
-  { id: 'bbq-meat-package', name: 'Premium BBQ Meat & Seafood Set (Wagyu, Chicken, Sausages, Corn)', price: 'Rp 165.000 / pax', icon: Flame },
-  { id: 'korean-shabu-set', name: 'Korean BBQ & Shabu-Shabu Hotpot Ingredient Set', price: 'Rp 135.000 / pax', icon: Utensils },
-  { id: 'floating-breakfast', name: 'Signature Floating Breakfast in Infinity Pool', price: 'Rp 350.000 / tray', icon: Waves },
-  { id: 'liwetan-feast', name: 'Traditional Sundanese Liwetan Feast (Complete with Tampah)', price: 'Rp 95.000 / pax', icon: Utensils },
-  { id: 'bonfire-marshmallow', name: 'Stargazing Bonfire Firewood & Marshmallow Kit', price: 'Free / Included', icon: Flame },
-  { id: 'tea-walk-guide', name: 'Sunrise Tea Walk Guide at Gunung Mas Estate', price: 'Rp 200.000 / group', icon: Sparkles }
-];
 
 export const WhatsAppBookingEngine: React.FC = () => {
   const [inquiry, setInquiry] = useState<BookingInquiry>({
@@ -19,7 +10,7 @@ export const WhatsAppBookingEngine: React.FC = () => {
     checkOut: '',
     guests: 18,
     eventType: 'Family Holiday Gathering',
-    addOns: ['Stargazing Bonfire Firewood & Marshmallow Kit'],
+    addOns: [],
     guestName: '',
     guestPhone: '',
     notes: ''
@@ -27,18 +18,6 @@ export const WhatsAppBookingEngine: React.FC = () => {
 
   const [copiedNumber, setCopiedNumber] = useState(false);
   const [showQrCode, setShowQrCode] = useState(false);
-
-  const toggleAddOn = (addonName: string) => {
-    setInquiry((prev) => {
-      const exists = prev.addOns.includes(addonName);
-      return {
-        ...prev,
-        addOns: exists
-          ? prev.addOns.filter((a) => a !== addonName)
-          : [...prev.addOns, addonName]
-      };
-    });
-  };
 
   const handleCopyNumber = () => {
     navigator.clipboard.writeText(VILLA_WHATSAPP_RAW);
@@ -81,7 +60,7 @@ export const WhatsAppBookingEngine: React.FC = () => {
             <div className="flex items-center justify-between border-b border-[#E6E2D3] pb-4">
               <div>
                 <h3 className="font-serif italic text-xl font-bold text-[#3D3A35]">
-                  Step 1: Custom Stay Details
+                  Custom Stay Details
                 </h3>
                 <p className="text-[#5C584A] text-xs mt-0.5">
                   Select your dates and preferences to auto-generate a WhatsApp message
@@ -168,46 +147,7 @@ export const WhatsAppBookingEngine: React.FC = () => {
               </div>
             </div>
 
-            {/* Optional Add-ons */}
-            <div>
-              <label className="block text-xs font-bold text-[#5C584A] uppercase tracking-widest mb-2.5">
-                Optional Experiences & Add-ons:
-              </label>
-              <div className="space-y-2">
-                {ADD_ON_OPTIONS.map((addon) => {
-                  const isChecked = inquiry.addOns.includes(addon.name);
-                  const Icon = addon.icon;
-                  return (
-                    <div
-                      key={addon.id}
-                      onClick={() => toggleAddOn(addon.name)}
-                      className={`flex items-center justify-between p-3.5 rounded-2xl border cursor-pointer transition-all ${
-                        isChecked
-                          ? 'bg-[#5C584A] border-[#5C584A] text-white shadow-sm'
-                          : 'bg-[#EAE5D9]/50 border-[#D4CEC1] text-[#3D3A35] hover:bg-[#EAE5D9]'
-                      }`}
-                    >
-                      <div className="flex items-center gap-3">
-                        <div className={`w-5 h-5 rounded-lg flex items-center justify-center border ${
-                          isChecked ? 'bg-white border-white text-[#5C584A]' : 'border-[#D4CEC1] bg-[#FDFBF7]'
-                        }`}>
-                          {isChecked && <Check className="w-3.5 h-3.5 stroke-[3]" />}
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <Icon className={`w-4 h-4 shrink-0 ${isChecked ? 'text-white' : 'text-[#5C584A]'}`} />
-                          <span className="text-xs sm:text-sm font-medium">{addon.name}</span>
-                        </div>
-                      </div>
-                      <span className={`text-xs font-mono shrink-0 ml-2 font-semibold ${isChecked ? 'text-white' : 'text-[#5C584A]'}`}>
-                        {addon.price}
-                      </span>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Contact Person Details */}
+            {/* Contact Person Details & Special Requests */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
               <div>
                 <label className="block text-xs font-bold text-[#5C584A] uppercase tracking-widest mb-2">
@@ -218,7 +158,7 @@ export const WhatsAppBookingEngine: React.FC = () => {
                   placeholder="e.g. Bpk. Hendra / Ibu Sarah"
                   value={inquiry.guestName}
                   onChange={(e) => setInquiry({ ...inquiry, guestName: e.target.value })}
-                  className="w-full bg-[#EAE5D9]/50 border border-[#D4CEC1] rounded-2xl px-4 py-2.5 text-sm text-[#3D3A35] placeholder:text-[#7D7768] focus:outline-none focus:border-[#5C584A]"
+                  className="w-full bg-[#EAE5D9]/50 border border-[#D4CEC1] rounded-2xl px-4 py-3 text-sm text-[#3D3A35] placeholder:text-[#7D7768] focus:outline-none focus:border-[#5C584A]"
                 />
               </div>
 
@@ -231,7 +171,7 @@ export const WhatsAppBookingEngine: React.FC = () => {
                   placeholder="e.g. Extra BBQ charcoal, early check-in"
                   value={inquiry.notes}
                   onChange={(e) => setInquiry({ ...inquiry, notes: e.target.value })}
-                  className="w-full bg-[#EAE5D9]/50 border border-[#D4CEC1] rounded-2xl px-4 py-2.5 text-sm text-[#3D3A35] placeholder:text-[#7D7768] focus:outline-none focus:border-[#5C584A]"
+                  className="w-full bg-[#EAE5D9]/50 border border-[#D4CEC1] rounded-2xl px-4 py-3 text-sm text-[#3D3A35] placeholder:text-[#7D7768] focus:outline-none focus:border-[#5C584A]"
                 />
               </div>
             </div>
@@ -290,11 +230,6 @@ export const WhatsAppBookingEngine: React.FC = () => {
                 <p>
                   🎉 <strong>Tujuan Acara:</strong> {inquiry.eventType}
                 </p>
-                {inquiry.addOns.length > 0 && (
-                  <p>
-                    ✨ <strong>Add-ons:</strong> {inquiry.addOns.join(', ')}
-                  </p>
-                )}
                 {inquiry.notes && (
                   <p>
                     📝 <strong>Catatan:</strong> {inquiry.notes}
@@ -381,7 +316,7 @@ export const WhatsAppBookingEngine: React.FC = () => {
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-3.5 h-3.5 text-[#2D5A43] mt-0.5 shrink-0" />
-                  <span><strong>Direct Butler Coordination:</strong> Custom arrival requests, meal prep, and room configurations arranged immediately.</span>
+                  <span><strong>2 On-Site Staff Assistance:</strong> Custom arrival requests, BBQ prep assistance, and room configurations arranged smoothly.</span>
                 </li>
               </ul>
             </div>
